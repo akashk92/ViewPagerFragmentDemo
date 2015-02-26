@@ -23,7 +23,8 @@ public class MainActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         viewPager = (ViewPager) findViewById(R.id.view_pager);
-        viewPager.setPageMargin(50);
+        viewPager.setPageMargin(15);
+        viewPager.setClipChildren(false);
         images = new int[]{R.drawable.images1, R.drawable.images2, R.drawable.images3};
         adapter = new FragmentPagerAdapterDemo(getSupportFragmentManager());
         viewPager.setAdapter(adapter);
@@ -52,7 +53,7 @@ public class MainActivity extends FragmentActivity {
 
         @Override
         public Fragment getItem(int index) {
-               return ViewPagerFragment.newInstance(index);
+            return ViewPagerFragment.newInstance(index);
         }
 
         @Override
