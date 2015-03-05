@@ -11,6 +11,9 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.github.amlcurran.showcaseview.ShowcaseView;
+import com.github.amlcurran.showcaseview.targets.Target;
+
 
 public class MainActivity extends FragmentActivity {
 
@@ -28,6 +31,11 @@ public class MainActivity extends FragmentActivity {
         images = new int[]{R.drawable.images1, R.drawable.images2, R.drawable.images3};
         adapter = new FragmentPagerAdapterDemo(getSupportFragmentManager());
         viewPager.setAdapter(adapter);
+        new ShowcaseView.Builder(this)
+                .setTarget(Target.NONE)
+                .setContentTitle("tutorial")
+                .setContentText("tutorial for 1st tym user")
+                .build();
     }
 
 
